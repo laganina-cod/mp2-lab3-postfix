@@ -130,21 +130,21 @@ TEST(TStack, resized_stack_is_equal_to_source_one)
 	EXPECT_EQ(3, st.top());
 }
 
-//TEST(TStack, can_assign_stack)
-//{
-	//TStack<int> st(3);
-	//TStack<int> st1(5);
-	//ASSERT_NO_THROW(st1 = st);
-//}
-//TEST(TStack, assigned_stack_is_equal_to_source_one)
-//{
-	//TStack<int> st(3);
-	//TStack<int> st1(5);
-	//st.push(2);
-	//st.push(3);
-	//st.push(4);
-	//st1 = st;
-	//EXPECT_EQ(4, st1.top());
-	//st.cltop();
-	//EXPECT_EQ(3, st1.top());
-//}
+TEST(TStack, can_assign_stack)
+{
+	TStack<int> st(3);
+	TStack<int> st1(5);
+	ASSERT_NO_THROW(st1 = st);
+}
+TEST(TStack, assigned_stack_is_equal_to_source_one)
+{
+	TStack<int> st(3);
+	TStack<int> st1(5);
+	st.push(2);
+	st.push(3);
+	st.push(4);
+	st1 = st;
+	EXPECT_EQ(4, st1.top());
+	st.cltop();
+	EXPECT_EQ(3, st1.top());
+}

@@ -24,8 +24,8 @@ public:
 
     }
     TStack<T>(size_t s) {
-        if (s <= 0) {
-            throw std::invalid_argument("Size should be greater than zero");
+        if (s <= 3) {
+            throw std::invalid_argument("Size should be greater than three");
         }
         reserved = s;
         sz = 0;
@@ -140,7 +140,7 @@ public:
 
     }
     TStack<T>& operator=(const TStack& other) {
-        if ((*this) != other) {
+        
             if (reserved != other.reserved) {
                 reserved = other.reserved;
                 delete[] pMem;
@@ -150,7 +150,7 @@ public:
             for (size_t i = 0; i < sz; i++) {
                 pMem[i] = other.pMem[i];
             }
-        }
+        
         return *this;
     }
 };
