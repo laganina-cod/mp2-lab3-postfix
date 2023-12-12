@@ -99,10 +99,11 @@ TEST(TStack, copied_stack_has_its_own_memory)
 
 TEST(TStack, is_full_is_correct)
 {
-	TStack<int> st(3);
+	TStack<int> st(4);
 	st.push(2);
 	st.push(3);
 	st.push(4);
+	st.push(5);
 	EXPECT_EQ(1, st.isFull());
 }
 
@@ -119,7 +120,8 @@ TEST(TStack, can_push_element_when_is_full)
 
 TEST(TStack, resized_stack_is_equal_to_source_one)
 {
-	TStack<int> st(3);
+	TStack<int> st(4);
+	st.push(1);
 	st.push(2);
 	st.push(3);
 	st.push(4);
@@ -132,19 +134,19 @@ TEST(TStack, resized_stack_is_equal_to_source_one)
 
 TEST(TStack, can_assign_stack)
 {
-	TStack<int> st(3);
+	TStack<int> st(4);
 	TStack<int> st1(5);
 	ASSERT_NO_THROW(st1 = st);
 }
 TEST(TStack, assigned_stack_is_equal_to_source_one)
 {
-	TStack<int> st(3);
+	TStack<int> st(4);
 	TStack<int> st1(5);
 	st.push(2);
 	st.push(3);
 	st.push(4);
 	st1 = st;
 	EXPECT_EQ(4, st1.top());
-	st.cltop();
+	st1.cltop();
 	EXPECT_EQ(3, st1.top());
 }

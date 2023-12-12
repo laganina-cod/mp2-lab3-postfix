@@ -15,8 +15,8 @@ class TStack
     size_t reserved;
 public:
     TStack<T>() {
-        pMem = new T[100];
         reserved = 100;
+        pMem = new T[reserved];
         sz = 0;
        // sz = 1000;
         //oleg = new T[1000];
@@ -49,15 +49,16 @@ public:
         //cursor = oleg + (st.cursor - st.oleg);
     }
     ~TStack<T>() {
-        pMem = nullptr;
+        
         delete[] pMem;
+        pMem = nullptr;
         //delete[]oleg;
         //oleg = nullptr;
     }
     void push(T el)
     {
         if (sz == reserved) {
-            reserved = sz*1,3;
+            reserved = sz * 1.3;
             T* copy = new T[reserved];
             for (size_t i = 0; i < sz; i++) {
                 copy[i] = pMem[i];
@@ -108,8 +109,9 @@ public:
         //}
         //cursor = cursor - 1;
     }
-    bool isFull()  const noexcept
+    bool isFull() 
     {
+         
         return(sz == reserved);
        // if (cursor - oleg == sz) {
             //return true;

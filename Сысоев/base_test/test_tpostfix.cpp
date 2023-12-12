@@ -52,43 +52,46 @@ TEST(ArithmeticExpression, can_do_postfix7) {
 }
 TEST(ArithmeticExpression, can_calculate1) {
 	ArithmeticExpression p("5+(2*4)*8/8");
-	//map<char, int> op = { {'0',0},{'1',1},{'2',2},{'3',3},{'4',4},{'5',5},{'6',6},{'7',7},{'8',8},{'9',9} };
+	
 	double a = p.Calculate();
 	EXPECT_EQ(13,a );
 }
 TEST(ArithmeticExpression, can_calculate2) {
 	ArithmeticExpression p("(9/3)*2+5");
-	//map<char, int> op = { {'0',0},{'1',1},{'2',2},{'3',3},{'4',4},{'5',5},{'6',6},{'7',7},{'8',8},{'9',9} };
+	
 	double a = p.Calculate();
 	EXPECT_EQ(11, a);
 }
 TEST(ArithmeticExpression, can_calculate3) {
 	ArithmeticExpression p("5-2*(9/3)");
-	//map<char, int> op = { {'0',0},{'1',1},{'2',2},{'3',3},{'4',4},{'5',5},{'6',6},{'7',7},{'8',8},{'9',9} };
+	
+
 	double a = p.Calculate();
 	EXPECT_EQ(-1, a);
 }
 TEST(ArithmeticExpression, can_calculate4) {
 	ArithmeticExpression p("5+2*(9+3)");
-	//map<char, int> op = { {'0',0},{'1',1},{'2',2},{'3',3},{'4',4},{'5',5},{'6',6},{'7',7},{'8',8},{'9',9} };
+	
+
 	double a = p.Calculate();
 	EXPECT_EQ(29, a);
 }
 TEST(ArithmeticExpression, can_calculate5) {
 	ArithmeticExpression p("5+2*(9/3+5+9)");
-	//map<char, int> op = { {'0',0},{'1',1},{'2',2},{'3',3},{'4',4},{'5',5},{'6',6},{'7',7},{'8',8},{'9',9} };
+	
+
 	double a = p.Calculate();
 	EXPECT_EQ(39, a);
 }
 TEST(ArithmeticExpression, can_calculate6) {
 	ArithmeticExpression p("5+2*(9/3+5+9)");
-	//map<char, int> op = { {'0',0},{'1',1},{'2',2},{'3',3},{'4',4},{'5',5},{'6',6},{'7',7},{'8',8},{'9',9} };
+
 	double a = p.Calculate();
 	EXPECT_EQ(39, a);
 }
 TEST(ArithmeticExpression, caan_calculate7) {
 	ArithmeticExpression p("5+3*(5*(3-2))");
-	//map<char, int> op = { {'0',0},{'1',1},{'2',2},{'3',3},{'4',4},{'5',5},{'6',6},{'7',7},{'8',8},{'9',9} };
+	
 	double a = p.Calculate();
 	EXPECT_EQ(20, a);
 }
